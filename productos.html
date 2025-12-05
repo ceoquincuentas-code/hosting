@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEOQUIM SRL - Catálogo de Productos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+           
+
+        body {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1B9ECC;
+            color: WHITE;
+            overflow-x: hidden;
+        }
+
+
+       /* Navegación superior */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, 
+        white 0%, 
+        #e6f7fc 25%, 
+        #99d9ea 50%, 
+        #4dbdd9 75%, 
+        #1B9ECC 100%
+    );
+    background-size: 200% 100%;
+    animation: slideDown 0.8s ease-out, flujoRio 3s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 2px solid #1B9ECC;
+}
+
+@keyframes flujoRio {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 40% 50%;
+  }
+}
+}
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00bfff;
+            text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+        }
+
+        .nav-links {
+            text-align: center;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-align: center;
+            color: #1B9ECC;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            text-align: center;
+            color: WHITE;
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+        }
+
+        /* Hero Section con Logo Giratorio */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0096c7 0%, #00b4d8 40%, #48cae4 70%, #90e0ef 100%);
+  min-height: 100vh;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo Circular Giratorio */
+        .rotating-logo {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: 0 auto 40px;
+            animation: rotateGlow 10s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            0% {
+                transform: rotate(0deg);
+                filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.6));
+            }
+            50% {
+                filter: drop-shadow(0 0 40px rgba(0, 191, 255, 0.8));
+            }
+            100% {
+                transform: rotate(360deg);
+                filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.6));
+            }
+        }
+
+        .circle-text {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .circle-text svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .circle-text path {
+            fill: none;
+        }
+
+        .circle-text text {
+            fill: WHITE;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 8px;
+        }
+
+        .center-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: WHITE;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: WHITE;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background: #1B9ECC;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 50px rgba(0, 191, 255, 0.8);
+            background: #00d4ff;
+        }
+
+       /* Sección de Productos Estilo Moderno */
+.productos-section {
+    padding: 100px 50px;
+    background: #f8f9fa;
+}
+
+.productos-section h2 {
+    text-align: center;
+    color: #1B9ECC;
+    font-size: 3em;
+    margin-bottom: 80px;
+    animation: fadeIn 1s ease-in;
+}
+
+.producto-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto 120px auto;
+    align-items: center;
+    padding: 60px;
+    background: white;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración de fondo sutil */
+.producto-item::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(27, 158, 204, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+    z-index: 0;
+}
+
+.producto-item::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(27, 158, 204, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    bottom: -150px;
+    left: -150px;
+    z-index: 0;
+}
+
+/* Alternar posición */
+.producto-item:nth-child(even) {
+    grid-template-columns: 1fr 1fr;
+}
+
+.producto-item:nth-child(even) .producto-imagen {
+    order: 2;
+}
+
+.producto-item:nth-child(even) .producto-info {
+    order: 1;
+}
+
+.producto-imagen {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.producto-imagen img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+.producto-item:hover .producto-imagen img {
+    transform: scale(1.15) rotate(3deg);
+}
+
+.producto-info {
+    position: relative;
+    z-index: 1;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.producto-nombre {
+    font-size: 3em;
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.producto-nombre span {
+    color: #1B9ECC;
+}
+
+.producto-precio {
+    font-size: 3.5em;
+    color: #1B9ECC;
+    font-weight: 800;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.producto-descripcion {
+    color: #4a5568;
+    font-size: 1.15em;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.producto-badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: #f0f9ff;
+    border: 2px solid #1B9ECC;
+    color: #1B9ECC;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.95em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    background: #1B9ECC;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.producto-botones {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-info {
+    flex: 1;
+    background: #1B9ECC;
+    color: white;
+    padding: 18px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(27, 158, 204, 0.3);
+}
+
+.btn-info:hover {
+    background: #157a9e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(27, 158, 204, 0.4);
+}
+
+.btn-detalles {
+    flex: 1;
+    background: white;
+    color: #2d3748;
+    padding: 18px 35px;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-detalles:hover {
+    border-color: #1B9ECC;
+    color: #1B9ECC;
+    transform: translateY(-2px);
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .producto-item {
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+        padding: 40px 30px;
+    }
+    
+    .producto-item:nth-child(even) .producto-imagen,
+    .producto-item:nth-child(even) .producto-info {
+        order: 0 !important;
+    }
+    
+    .producto-nombre {
+        font-size: 2.2em;
+    }
+    
+    .producto-precio {
+        font-size: 2.8em;
+    }
+}
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 20px 25px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .rotating-logo {
+                width: 200px;
+                height: 200px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .productos-section {
+                padding: 60px 25px;
+            }
+
+            .productos-grid {
+                max-width: 100%;
+            }
+
+            .producto-nombre {
+                font-size: 2rem;
+            }
+
+            .producto-precio {
+                font-size: 2rem;
+            }
+
+            .producto-imagen {
+                height: 300px;
+            }
+
+            .producto-acciones {
+                flex-direction: column;
+            }
+        }
+
+/* Carrusel de Productos */
+.carrusel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 80px auto;
+    overflow: hidden;
+}
+
+.carrusel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-slide {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    padding: 80px;
+    background: white;
+}
+
+.carrusel-info {
+    padding-right: 40px;
+}
+
+.carrusel-info h3 {
+    font-size: 3.5em;
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.carrusel-info h3 span {
+    color: #1B9ECC;
+}
+
+.carrusel-info p {
+    color: #4a5568;
+    font-size: 1.25em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.carrusel-precio {
+    font-size: 4em;
+    color: #1B9ECC;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.carrusel-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrusel-imagen img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    object-fit: contain;
+   
+}
+
+/* Flechas de navegación */
+.carrusel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(27, 158, 204, 0.9);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrusel-arrow:hover {
+    background: #1B9ECC;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carrusel-arrow.prev {
+    left: 20px;
+}
+
+.carrusel-arrow.next {
+    right: 20px;
+}
+
+/* Indicadores (puntitos) */
+.carrusel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background: #cbd5e0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #1B9ECC;
+    width: 30px;
+    border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .carrusel-slide {
+        grid-template-columns: 1fr;
+        padding: 40px 30px;
+    }
+    
+    .carrusel-arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+.producto-badges {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: #f0f9ff;
+    border: 2px solid #1B9ECC;
+    color: #1B9ECC;
+    padding: 12px 28px;
+    border-radius: 25px;
+    font-size: 1.05em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    background: #1B9ECC;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Sección de Contacto */
+.contacto-section {
+    padding: 100px 50px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.contacto-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.contacto-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contacto-header h2 {
+    font-size: 3em;
+    color: #1B9ECC;
+    margin-bottom: 15px;
+}
+
+.contacto-header p {
+    font-size: 1.3em;
+    color: #4a5568;
+}
+
+.contacto-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+}
+
+/* Formulario */
+.contacto-form {
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.contacto-form h3 {
+    font-size: 2em;
+    color: #2d3748;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 18px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1.05em;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1B9ECC;
+    box-shadow: 0 0 0 4px rgba(27, 158, 204, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-enviar {
+    width: 100%;
+    background: #1B9ECC;
+    color: white;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(27, 158, 204, 0.3);
+}
+
+.btn-enviar:hover {
+    background: #157a9e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(27, 158, 204, 0.4);
+}
+
+/* Información de Contacto */
+.contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contacto-info h3 {
+    font-size: 2em;
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.info-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 25px rgba(27, 158, 204, 0.2);
+}
+
+.info-icon {
+    font-size: 2.5em;
+    flex-shrink: 0;
+}
+
+.info-text h4 {
+    font-size: 1.2em;
+    color: #1B9ECC;
+    margin-bottom: 8px;
+}
+
+.info-text p {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .contacto-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contacto-form {
+        padding: 30px;
+    }
+    
+    .contacto-header h2 {
+        font-size: 2.2em;
+    }
+}
+             
+    </style>
+</head>
+<body>
+
+    <div class="blue-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="logo">CATALOGO GRUPO CEOQUIM SRL</div>
+  
+  
+    </nav>
+
+    <!-- Hero Section con Logo Giratorio -->
+    <section class="hero" id="hero">
+        <div clasGs="hero-content">
+            <div class="rotating-logo">
+                <svg class="circle-text" viewBox="0 0 298 298">
+                    <defs>
+                        <path id="circlePath" d="M 150, 150 m -120, 0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0"/>
+                    </defs>
+                    <text>
+                        <textPath href="#circlePath">
+                             •DISTRIBUCIÓN DE•CONDIMENTOS
+                        </textPath>
+                    </text>
+                </svg>
+                <div class="center-icon"></div>
+            </div>
+            <h1>GRUPO CEOQUIM SRL</h1>
+                  <p>NUESTROS INGREDIENTES, TUS EXITOS</p>
+            <a href="#productos" class="cta-button">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <!-- Sección de Productos -->
+    <section class="productos-section">
+    <h2>Nuestros Productos</h2>
+    
+    <div class="carrusel-container">
+        <div class="carrusel-wrapper" id="carruselWrapper">
+            
+           <!-- Slide 1 - Comino -->
+<div class="carrusel-slide">
+    <div class="carrusel-info">
+        <h3>Comino <span>Premium</span></h3>
+        <div class="carrusel-precio">1,050 Bs</div>
+        <p>Comino de la más alta calidad, ideal para realzar el sabor de tus platos tradicionales y gourmet. Producto seleccionado con los más altos estándares de calidad. Perfecto para carnes, sopas, guisos y preparaciones orientales.</p>
+        <div class="producto-badges">
+            <span class="badge">25 KG</span>
+            <span class="badge">100% Natural</span>
+            <span class="badge">Grado Alimenticio</span>
+        </div>
+    </div>
+    <div class="carrusel-imagen">
+        <img src="../IMAGENES/comino.jpg" alt="Comino">
+    </div>
+</div>
+
+<!-- Slide 2 - Glutamato Monosódico -->
+<div class="carrusel-slide">
+    <div class="carrusel-info">
+        <h3>Glutamato Monosódico <span>(Ajinomoto)</span></h3>
+        <div class="carrusel-precio">465 Bs</div>
+        <p>Potenciador de sabor de calidad premium que realza el gusto natural de tus alimentos. Ideal para todo tipo de preparaciones culinarias, desde sopas hasta carnes y vegetales. Producto de grado alimenticio certificado que garantiza la mejor experiencia gastronómica.</p>
+        <div class="producto-badges">
+            <span class="badge">25 KG</span>
+            <span class="badge">Grado A</span>
+            <span class="badge">Certificado</span>
+        </div>
+    </div>
+    <div class="carrusel-imagen">
+        <img src="../IMAGENES/ajinomoto.jpg" alt="Glutamato Monosódico">
+    </div>
+</div>
+
+<!-- Slide 3 - Mostaza Amarilla -->
+<div class="carrusel-slide">
+    <div class="carrusel-info">
+        <h3>Mostaza Amarilla <span>Selecta</span></h3>
+        <div class="carrusel-precio">1,350 Bs</div>
+        <p>Mostaza amarilla de semilla selecta, perfecta para salsas, aderezos y marinados. Aporta un sabor distintivo y picante a tus preparaciones. Ingrediente esencial en la cocina profesional y casera para darle ese toque especial a tus recetas.</p>
+        <div class="producto-badges">
+            <span class="badge">25 KG</span>
+            <span class="badge">Premium</span>
+            <span class="badge">Semilla Selecta</span>
+        </div>
+    </div>
+    <div class="carrusel-imagen">
+        <img src="../IMAGENES/comino.jpg" alt="Mostaza Amarilla">
+    </div>
+</div>
+
+<!-- Slide 4 - Pimienta Dulce -->
+<div class="carrusel-slide">
+    <div class="carrusel-info">
+        <h3>Pimienta Dulce <span>Gourmet</span></h3>
+        <div class="carrusel-precio">3,700 Bs</div>
+        <p>Pimienta dulce de calidad gourmet, conocida por su sabor suave y aromático. Perfecta para platos elegantes, parrillas y recetas internacionales. Un ingrediente indispensable para chefs y amantes de la buena cocina que buscan sabores refinados.</p>
+        <div class="producto-badges">
+            <span class="badge">25 KG</span>
+            <span class="badge">Gourmet</span>
+            <span class="badge">Aromática</span>
+        </div>
+    </div>
+    <div class="carrusel-imagen">
+        <img src="../IMAGENES/comino.jpg" alt="Pimienta Dulce">
+    </div>
+</div>
+
+<!-- Slide 5 - Ácido Cítrico -->
+<div class="carrusel-slide">
+    <div class="carrusel-info">
+        <h3>Producto acido <span>EXPLOCIP</span></h3>
+         <div class="carrusel-precio">12 Bs </div>
+        <p>Producto cítrico de grado alimenticio, utilizado como conservante natural y regulador de acidez. Ideal para bebidas, conservas, dulces y productos de repostería. Versátil y seguro para uso industrial y doméstico en la elaboración de alimentos.</p>
+        <div class="producto-badges">
+            <span class="badge">500 GR</span>
+            <span class="badge">Conservante Natural</span>
+            <span class="badge">Uso Alimenticio</span>
+        </div>
+    </div>
+    <div class="carrusel-imagen">
+        <img src="../IMAGENES/explocip.jpg" alt="Ácido Cítrico">
+    </div>
+</div>
+
+<!-- Slide 6 - Edulcorante Compuesto -->
+<div class="carrusel-slide">
+    <div class="carrusel-info">
+        <h3>Edulcorante Compuesto <span>Premium</span></h3>
+         <div class="carrusel-precio">4000 Bs</div>
+        <p>Edulcorante compuesto de alta calidad, alternativa saludable al azúcar tradicional. Ideal para productos dietéticos, bebidas light y repostería baja en calorías. Mantiene el dulzor sin comprometer el sabor, perfecto para la industria alimentaria moderna.</p>
+        <div class="producto-badges">
+            <span class="badge">25 KG </span>
+            <span class="badge">Bajo en Calorías</span>
+            <span class="badge">Uso Industrial</span>
+        </div>
+    </div>
+    <div class="carrusel-imagen">
+        <img src="../IMAGENES/estevia.jpg" alt="Edulcorante Compuesto">
+    </div>
+</div>
+
+<!-- Slide 6 - Edulcorante Compuesto -->
+<div class="carrusel-slide">
+    <div class="carrusel-info">
+        <h3>Edulcorante Compuesto <span>Premium</span></h3>
+          <div class="carrusel-precio">165 Bs</div>
+        <p>Edulcorante compuesto de alta calidad, alternativa saludable al azúcar tradicional. Ideal para productos dietéticos, bebidas light y repostería baja en calorías. Mantiene el dulzor sin comprometer el sabor, perfecto para la industria alimentaria moderna.</p>
+        <div class="producto-badges">
+            <span class="badge"> 1 KG</span>
+            <span class="badge">Bajo en Calorías</span>
+            <span class="badge">Uso Industrial</span>
+        </div>
+    </div>
+    <div class="carrusel-imagen">
+        <img src="../IMAGENES/estevia1.jpg" alt="Edulcorante Compuesto">
+    </div>
+</div>
+
+<!-- Slide 7 - Bicarbonato de Sodio -->
+<div class="carrusel-slide">
+    <div class="carrusel-info">
+        <h3>Bicarbonato de Sodio <span>Alimenticio</span></h3>
+       <div class="carrusel-precio">550 Bs</div>
+        <p>Bicarbonato de sodio grado alimenticio, esencial para la repostería y panadería. Actúa como leudante natural proporcionando esponjosidad a masas y bizcochos. También útil como regulador de pH en diversas preparaciones culinarias y bebidas.</p>
+        <div class="producto-badges">
+            <span class="badge">25 KG</span>
+            <span class="badge">Leudante Natural</span>
+            <span class="badge">Multifuncional</span>
+        </div>
+    </div>
+    <div class="carrusel-imagen">
+        <img src="../IMAGENES/bicarbonato.jpg" alt="Bicarbonato de Sodio">
+    </div>
+</div>
+
+<!-- Slide 7 - Bicarbonato de Sodio -->
+<div class="carrusel-slide">
+    <div class="carrusel-info">
+        <h3>Bicarbonato de Sodio <span>Alimenticio</span></h3>
+       <div class="carrusel-precio">24 Bs</div>
+        <p>Bicarbonato de sodio grado alimenticio, esencial para la repostería y panadería. Actúa como leudante natural proporcionando esponjosidad a masas y bizcochos. También útil como regulador de pH en diversas preparaciones culinarias y bebidas.</p>
+        <div class="producto-badges">
+            <span class="badge">1 KG</span>
+            <span class="badge">Leudante Natural</span>
+            <span class="badge">Multifuncional</span>
+        </div>
+    </div>
+    <div class="carrusel-imagen">
+        <img src="../IMAGENES/bicarbonato1.jpg" alt="Bicarbonato de Sodio">
+    </div>
+</div>
+        </div>
+        
+        <!-- Flechas -->
+        <button class="carrusel-arrow prev" onclick="moverCarrusel(-1)">❮</button>
+        <button class="carrusel-arrow next" onclick="moverCarrusel(1)">❯</button>
+        
+        <!-- Indicadores -->
+       <div class="carrusel-indicators" id="indicators">
+    <span class="indicator active" onclick="irASlide(0)"></span>
+    <span class="indicator" onclick="irASlide(1)"></span>
+    <span class="indicator" onclick="irASlide(2)"></span>
+    <span class="indicator" onclick="irASlide(3)"></span>
+    <span class="indicator" onclick="irASlide(4)"></span>
+    <span class="indicator" onclick="irASlide(5)"></span>
+    <span class="indicator" onclick="irASlide(6)"></span>
+</div>
+    </div>
+</section>
+
+
+    <!-- Repite para más productos -->
+    
+</section>
+   
+
+<!-- Tu contenido HTML aquí -->
+
+<!-- Sección de Contacto -->
+<section class="contacto-section" id="contacto">
+    <div class="contacto-container">
+        <div class="contacto-header">
+            <h2>¿Listo para hacer tu pedido?</h2>
+            <p>Contáctanos y te responderemos en menos de 24 horas</p>
+        </div>
+
+        <div class="contacto-content">
+            <!-- Formulario -->
+            <div class="contacto-form">
+                <h3>Envíanos un mensaje</h3>
+                <form id="formContacto" onsubmit="enviarWhatsApp(event)">
+                    <div class="form-group">
+                        <input type="text" id="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Tu correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="telefono" placeholder="Tu teléfono" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="producto" required>
+                            <option value="">Selecciona un producto</option>
+                            <option value="Comino - 1,050 Bs (25KG)">Comino - 1,050 Bs (25KG)</option>
+                            <option value="Glutamato Monosódico - 465 Bs (25KG)">Glutamato Monosódico - 465 Bs (25KG)</option>
+                            <option value="Mostaza Amarilla - 1,350 Bs (25KG)">Mostaza Amarilla - 1,350 Bs (25KG)</option>
+                            <option value="Pimienta Dulce - 3,700 Bs (25KG)">Pimienta Dulce - 3,700 Bs (25KG)</option>
+                            <option value="Ácido Cítrico - 500 Bs (25KG) / 12 Bs (500GR)">Ácido Cítrico - 500 Bs (25KG) / 12 Bs (500GR)</option>
+                            <option value="Edulcorante Compuesto - 4,000 Bs (25KG) / 165 Bs (1KG)">Edulcorante Compuesto - 4,000 Bs (25KG) / 165 Bs (1KG)</option>
+                            <option value="Bicarbonato de Sodio - 550 Bs (25KG) / 24 Bs (1KG)">Bicarbonato de Sodio - 550 Bs (25KG) / 24 Bs (1KG)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="mensaje" placeholder="¿Qué cantidad necesitas? Cuéntanos más..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">
+                        <span>Enviar por WhatsApp</span> 💬
+                    </button>
+                </form>
+            </div>
+
+            <!-- Información de Contacto -->
+            <div class="contacto-info">
+                <h3>Información de Contacto</h3>
+                
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div class="info-text">
+                        <h4>Dirección</h4>
+                        <p>Parque Industrial Latino Americano<br>Zona Motacú UV 007 MZA 017<br>Santa Cruz de la Sierra</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <div class="info-text">
+                        <h4>Teléfonos</h4>
+                        <p>(591) 65178889<br>62114355<br>64475426</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">✉️</div>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <p>Contacto@grupoceoquim.com<br>ventas@grupoceoquim.com</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🏦</div>
+                    <div class="info-text">
+                        <h4>Cuenta Bancaria</h4>
+                        <p>Banco Ganadero<br>Nro. Cuenta: 1311262068</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🕐</div>
+                    <div class="info-text">
+                        <h4>Horario de Atención</h4>
+                        <p>Lunes a Viernes: 8:00 AM - 6:00 PM<br>Sábados: 8:00 AM - 1:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Botón directo de WhatsApp -->
+                <a href="https://wa.me/59164475426" target="_blank" class="btn-whatsapp-directo">
+                    <span>💬</span> Chat Directo por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    
+    
+    <script>
+        let slideActual = 0;
+        const slides = document.querySelectorAll('.carrusel-slide');
+        const totalSlides = slides.length;
+
+        function moverCarrusel(direccion) {
+            slideActual += direccion;
+            
+            if (slideActual < 0) {
+                slideActual = totalSlides - 1;
+            } else if (slideActual >= totalSlides) {
+                slideActual = 0;
+            }
+            
+            actualizarCarrusel();
+        }
+
+        function irASlide(index) {
+            slideActual = index;
+            actualizarCarrusel();
+        }
+
+        function actualizarCarrusel() {
+            const wrapper = document.getElementById('carruselWrapper');
+            wrapper.style.transform = `translateX(-${slideActual * 100}%)`;
+            
+            // Actualizar indicadores
+            const indicators = document.querySelectorAll('.indicator');
+            indicators.forEach((indicator, index) => {
+                if (index === slideActual) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        // Auto-play opcional (cada 5 segundos)
+        setInterval(() => {
+            moverCarrusel(0);
+        }, 5000);
+
+         
+function enviarWhatsApp(event) {
+    event.preventDefault(); // Evita que el formulario se envíe normalmente
+    
+    // Obtener los valores del formulario
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+    const telefono = document.getElementById('telefono').value;
+    const producto = document.getElementById('producto').value;
+    const mensaje = document.getElementById('mensaje').value;
+    
+    // Crear el mensaje para WhatsApp
+    const mensajeWhatsApp = `
+*NUEVA CONSULTA - Grupo ICEOQUIM*
+
+👤 *Nombre:* ${nombre}
+📧 *Email:* ${email}
+📱 *Teléfono:* ${telefono}
+
+🛒 *Producto de Interés:*
+${producto}
+
+💬 *Mensaje:*
+${mensaje}
+
+---
+_Enviado desde www.grupoceoquim.com_
+    `.trim();
+    
+    // Codificar el mensaje para URL
+    const mensajeCodificado = encodeURIComponent(mensajeWhatsApp);
+    
+    // Número de WhatsApp (formato internacional sin + ni espacios)
+    const numeroWhatsApp = '59164475426';
+    
+    // Crear el enlace de WhatsApp
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
+    
+    // Abrir WhatsApp en nueva pestaña
+    window.open(urlWhatsApp, '_blank');
+    
+    // Opcional: Limpiar el formulario después de enviar
+    document.getElementById('formContacto').reset();
+    
+    // Opcional: Mostrar mensaje de confirmación
+    alert('¡Redirigiendo a WhatsApp! 💬');
+}
+
+
+    </script>
+
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <p><strong>CEOQUIM SRL - Empresa Alimentaria</strong></p>
+        <p>&copy; 2024 Todos los derechos reservados</p>
+        <p>Calidad y excelencia en cada producto</p>
+    </footer>
+
+
+</body>
+</html>
